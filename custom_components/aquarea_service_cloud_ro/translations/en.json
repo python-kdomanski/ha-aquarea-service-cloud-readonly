@@ -12,8 +12,10 @@
       "device": {
         "title": "Select your heat pump",
         "data": {
-          "device_id": "Device"
-        }
+          "device_id": "Device",
+          "name_language": "Sensor name language"
+        },
+        "description": "Select the heat pump and sensor name language. Automatic uses the Home Assistant system language."
       }
     },
     "error": {
@@ -22,10 +24,34 @@
       "device_list_invalid": "Panasonic returned an unexpected device-list response.",
       "status_response_invalid": "Panasonic returned an unexpected status response.",
       "cannot_connect": "Cannot connect to Panasonic Aquarea Service Cloud.",
-      "no_devices": "No heat pumps are available for this account."
+      "no_devices": "No heat pumps are available for this account.",
+      "invalid_language": "Select Automatic, Polski or English."
     },
     "abort": {
       "already_configured": "This account is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Sensor name language",
+        "description": "Saving applies the selected language and reloads the integration. Existing entity IDs are preserved. Names set manually on entities or dashboard cards take precedence.",
+        "data": {
+          "name_language": "Sensor name language"
+        }
+      }
+    },
+    "error": {
+      "invalid_language": "Select Automatic, Polski or English."
+    }
+  },
+  "selector": {
+    "name_language": {
+      "options": {
+        "auto": "Automatic (HA system language)",
+        "pl": "Polski",
+        "en": "English"
+      }
     }
   }
 }

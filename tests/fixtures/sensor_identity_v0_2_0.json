@@ -1,0 +1,134 @@
+{
+  "RunningStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "WorkingMode": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "WaterInleet": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "WaterOutleet": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone1ActualTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone1SetpointTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone1WaterTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone2ActualTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone2SetpointTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "Zone2WaterTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "DailyWaterTankActualTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "DailyWaterTankSetpointTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "BufferTankTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "OutdoorTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "WaterFlow": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "PumpSpeed": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "HeatDirection": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "RoomHeaterStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "DailyWaterHeaterStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "DefrostStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "SolarStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "SolarTemperature": {
+    "unit": "°C",
+    "kind": "temperature"
+  },
+  "BiMode": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "ErrorStatus": {
+    "unit": null,
+    "kind": "enum"
+  },
+  "CompressorFrequency": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "Runtime": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "RunCount": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "RoomHeaterPerformance": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "RoomHeaterRunTime": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "DailyWaterHeaterRunTime": {
+    "unit": null,
+    "kind": "measurement"
+  },
+  "OutdoorCurrent": {
+    "unit": "A",
+    "kind": "current"
+  },
+  "HeatingInputPower": {
+    "unit": "kW",
+    "kind": "power"
+  },
+  "DhwInputPower": {
+    "unit": "kW",
+    "kind": "power"
+  }
+}

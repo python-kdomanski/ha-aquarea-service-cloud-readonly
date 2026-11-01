@@ -1,6 +1,8 @@
 DOMAIN = "aquarea_service_cloud_ro"
 CONF_PASSWORD = "password"
 CONF_DEVICE_ID = "device_id"
+CONF_NAME_LANGUAGE = "name_language"
+NAME_LANGUAGES = ("auto", "pl", "en")
 DEFAULT_SCAN_INTERVAL = 60
 PLATFORMS = ["sensor"]
 SERVICE_URL = "https://aquarea-service.panasonic.com/"

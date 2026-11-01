@@ -12,8 +12,10 @@
       "device": {
         "title": "Wybierz pompę",
         "data": {
-          "device_id": "Urządzenie"
-        }
+          "device_id": "Urządzenie",
+          "name_language": "Język nazw sensorów"
+        },
+        "description": "Wybierz pompę i język nazw sensorów. Automatycznie używa języka systemu Home Assistant."
       }
     },
     "error": {
@@ -22,10 +24,34 @@
       "device_list_invalid": "Panasonic zwrócił nieoczekiwaną odpowiedź z listą urządzeń.",
       "status_response_invalid": "Panasonic zwrócił nieoczekiwaną odpowiedź ze statusem urządzenia.",
       "cannot_connect": "Nie można połączyć się z Panasonic Service Cloud.",
-      "no_devices": "Konto nie udostępnia żadnej pompy."
+      "no_devices": "Konto nie udostępnia żadnej pompy.",
+      "invalid_language": "Wybierz Automatycznie, Polski albo English."
     },
     "abort": {
       "already_configured": "To konto jest już skonfigurowane."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Język nazw sensorów",
+        "description": "Zapisanie ustawień zastosuje wybrany język i przeładuje integrację. Dotychczasowe identyfikatory encji pozostaną takie same. Nazwy nadane ręcznie encjom lub kartom mają pierwszeństwo.",
+        "data": {
+          "name_language": "Język nazw sensorów"
+        }
+      }
+    },
+    "error": {
+      "invalid_language": "Wybierz Automatycznie, Polski albo English."
+    }
+  },
+  "selector": {
+    "name_language": {
+      "options": {
+        "auto": "Automatycznie (język systemu HA)",
+        "pl": "Polski",
+        "en": "English"
+      }
     }
   }
 }

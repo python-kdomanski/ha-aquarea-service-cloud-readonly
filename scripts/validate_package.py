@@ -2,6 +2,7 @@
 import ast
 import importlib.util
 import json
+import re
 from pathlib import Path
 import struct
 
@@ -32,7 +33,8 @@ def main():
     assert folders == [DOMAIN], folders
     manifest = load_json(COMPONENT/'manifest.json')
     assert manifest['domain'] == DOMAIN
-    assert manifest['version'] == '0.2.0'
+    assert re.fullmatch(r'\d+\.\d+\.\d+', manifest['version'])
+    assert '## ' + manifest['version'] + ' ' in (ROOT/'CHANGELOG.md').read_text(encoding='utf-8')
     assert manifest['codeowners'] == ['@python-kdomanski']
     assert manifest['documentation'] == URL
     assert manifest['issue_tracker'] == URL + '/issues'

@@ -29,7 +29,7 @@ Najpierw sprawdź dostęp do swojej pompy w [Aquarea Service Cloud](https://aqua
 4. Odszukaj **Aquarea Service Cloud Read Only** i pobierz najnowszą wersję.
 5. Uruchom ponownie **Home Assistant**.
 6. Przejdź do **Ustawienia → Urządzenia i usługi → Dodaj integrację**.
-7. Wybierz **Aquarea Service Cloud Read Only**, podaj dane Service Cloud i wybierz pompę.
+7. Wybierz **Aquarea Service Cloud Read Only**, podaj dane Service Cloud, wybierz pompę i język nazw sensorów.
 
 Po konfiguracji urządzenie i jego sensory pojawią się w HA. Integracja nie tworzy automatycznie
 pulpitu. [Przykładowa karta monitoringu](examples/monitoring.yaml) wymaga dopasowania identyfikatorów encji.
@@ -48,6 +48,30 @@ Pozostaw istniejący wpis integracji. Domena, klucze i unikalne identyfikatory s
 zachowane, więc dotychczasowe encje i konfiguracja powinny pozostać dostępne.
 Jeśli HACS zgłosi, że katalog istnieje, wybierz oferowaną przez HACS opcję ponownego pobrania.
 Nie usuwaj konfiguracji integracji, żeby rozwiązać sam konflikt plików.
+
+## Język nazw sensorów (od wersji 0.3.0)
+
+Podczas pierwszej konfiguracji, obok wyboru pompy, wybierz:
+
+- **Automatycznie** — język systemu (serwera) Home Assistant; polski dla `pl`, angielski dla pozostałych języków.
+- **Polski** — polskie nazwy wszystkich 33 sensorów.
+- **English** — angielskie nazwy wszystkich 33 sensorów.
+
+Później: **Ustawienia → Urządzenia i usługi → Aquarea Service Cloud Read Only → Konfiguruj**.
+Zapisanie wyboru przeładuje wpis i zastosuje nazwy. Nie trzeba ponownie podawać hasła.
+W trybie Automatycznie zmiana języka systemu HA zostanie zastosowana przy następnym przeładowaniu lub restarcie integracji.
+Wybór dotyczy nazw sensorów; nie zmienia tekstowych wartości stanów, takich jak On/Off.
+
+### Aktualizacja istniejącej instalacji
+
+Jeśli wpis z wersji 0.2.0 nie ma wybranego języka, aktualizacja zachowa jego oryginalne nazwy:
+30 angielskich nazw statusu i trzy polskie nazwy historii. Otwórz **Konfiguruj** i świadomie
+wybierz język, aby zastosować nowe nazwy.
+
+**Zapisane identyfikatory `entity_id` pozostają takie same**, np. końcówka `compressor_frequency`
+może pozostać angielska przy wyświetlanej nazwie „Częstotliwość sprężarki”. Liczniki, automatyzacje
+i karty nadal mogą wskazywać dotychczasowe encje. Ręcznie nadane nazwy encji oraz nazwy wpisane
+w YAML kart mają pierwszeństwo. Nowe instalacje nadają początkowe identyfikatory zgodnie z wybranymi nazwami.
 
 ## Dostępne odczyty
 
@@ -152,3 +176,5 @@ is 63: outdoor current, 72: heating input power, 78: DHW input power.
 
 Credentials are stored in the HA config entry; the integration does not add storage encryption.
 Keep HA administrator access and backups protected. No heat-pump control endpoints are included.
+
+Version 0.3.0 adds a sensor-name language setting (Automatic / Polski / English) during setup and in Configure. Existing installations without this option keep their original names until a language is explicitly selected. Changing display language preserves registered entity IDs. Automatic follows the HA server language when the integration loads; it is independent of individual user-interface languages.

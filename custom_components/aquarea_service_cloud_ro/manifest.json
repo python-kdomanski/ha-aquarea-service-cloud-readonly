@@ -1,12 +1,14 @@
 {
   "domain": "aquarea_service_cloud_ro",
   "name": "Aquarea Service Cloud Read Only",
-  "codeowners": ["@python-kdomanski"],
+  "codeowners": [
+    "@python-kdomanski"
+  ],
   "config_flow": true,
   "documentation": "https://github.com/python-kdomanski/ha-aquarea-service-cloud-readonly",
   "integration_type": "device",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/python-kdomanski/ha-aquarea-service-cloud-readonly/issues",
   "requirements": [],
-  "version": "0.2.0"
+  "version": "0.3.0"
 }

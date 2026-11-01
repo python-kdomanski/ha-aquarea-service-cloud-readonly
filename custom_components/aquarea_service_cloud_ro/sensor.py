@@ -9,12 +9,14 @@ from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from .const import CONF_DEVICE_ID, DOMAIN, HISTORY_FIELDS, HISTORY_MAX_AGE, SENSORS
+from .const import CONF_DEVICE_ID, CONF_NAME_LANGUAGE, DOMAIN, HISTORY_FIELDS, HISTORY_MAX_AGE, SENSORS
+from .names import sensor_names
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback):
     coordinator, _ = hass.data[DOMAIN][entry.entry_id]
     device_id = entry.data[CONF_DEVICE_ID]
+    names = sensor_names(entry.options.get(CONF_NAME_LANGUAGE), hass.config.language)
     device = DeviceInfo(
         identifiers={(DOMAIN, device_id)},
         name=entry.title,
@@ -22,7 +24,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
         model="Aquarea (Service Cloud)",
     )
     async_add_entities(
-        AquareaSensor(coordinator, device, device_id, key, definition)
+        AquareaSensor(coordinator, device, device_id, key, definition, names.get(key))
         for key, definition in SENSORS.items()
     )
 
@@ -30,11 +32,11 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_e
 class AquareaSensor(CoordinatorEntity, SensorEntity):
     _attr_has_entity_name = True
 
-    def __init__(self, coordinator, device, device_id, key, definition):
+    def __init__(self, coordinator, device, device_id, key, definition, display_name=None):
         super().__init__(coordinator)
         name, unit, kind = definition
         self._key = key
-        self._attr_name = name
+        self._attr_name = display_name if display_name is not None else name
         self._attr_unique_id = f"{device_id}_{key}"
         self._attr_device_info = device
         self._attr_native_unit_of_measurement = unit

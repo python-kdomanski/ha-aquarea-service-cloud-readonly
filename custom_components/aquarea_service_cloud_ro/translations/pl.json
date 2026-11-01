@@ -1,0 +1,31 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aquarea Service Cloud",
+        "description": "Logowanie do Panasonic Service Cloud. Hasło nie jest zapisywane w logach.",
+        "data": {
+          "username": "Login",
+          "password": "Hasło"
+        }
+      },
+      "device": {
+        "title": "Wybierz pompę",
+        "data": {
+          "device_id": "Urządzenie"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Panasonic odrzucił logowanie. Sprawdź konto Aquarea Service Cloud.",
+      "login_response_invalid": "Panasonic zwrócił nieoczekiwaną odpowiedź na próbę logowania.",
+      "device_list_invalid": "Panasonic zwrócił nieoczekiwaną odpowiedź z listą urządzeń.",
+      "status_response_invalid": "Panasonic zwrócił nieoczekiwaną odpowiedź ze statusem urządzenia.",
+      "cannot_connect": "Nie można połączyć się z Panasonic Service Cloud.",
+      "no_devices": "Konto nie udostępnia żadnej pompy."
+    },
+    "abort": {
+      "already_configured": "To konto jest już skonfigurowane."
+    }
+  }
+}

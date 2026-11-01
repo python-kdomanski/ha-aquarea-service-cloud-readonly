@@ -1,0 +1,31 @@
+# Dodaj jako karte Recznie. Zastap sensor.aquarea_* identyfikatorami swoich encji.
+type: vertical-stack
+cards:
+  - type: entities
+    title: Pompa ciepła — monitoring
+    show_header_toggle: false
+    entities:
+      - entity: sensor.aquarea_compressor_frequency
+        name: Częstotliwość sprężarki
+      - entity: sensor.aquarea_pump_speed
+        name: Prędkość pompy obiegowej
+      - entity: sensor.aquarea_water_flow
+        name: Przepływ wody
+      - entity: sensor.aquarea_water_inlet
+        name: Temperatura wody na wejściu
+      - entity: sensor.aquarea_zone_1_actual_temperature
+        name: Temperatura rzeczywista strefy 1
+      - entity: sensor.aquarea_zone_1_water_temperature
+        name: Temperatura wody w strefie 1
+      - entity: sensor.aquarea_prad_zewnetrzny
+        name: Prąd zewnętrzny
+      - entity: sensor.aquarea_pobor_mocy_w_trybie_grzania
+        name: Pobór mocy w trybie grzania
+      - entity: sensor.aquarea_pobor_mocy_w_trybie_cwu
+        name: Pobór mocy w trybie CWU
+  - type: history-graph
+    title: Częstotliwość sprężarki — ostatnie 24 godziny
+    hours_to_show: 24
+    entities:
+      - entity: sensor.aquarea_compressor_frequency
+        name: Częstotliwość sprężarki
